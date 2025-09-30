@@ -27,8 +27,8 @@ export default function OptimizedImage({
   priority = false,
   lazy = true,
   placeholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmM2Y0ZjYiLz48L3N2Zz4=',
-  sizes = '100vw',
-  quality = 85,
+  sizes: _sizes = '100vw',
+  quality: _quality = 85,
   onLoad,
   onError
 }: OptimizedImageProps) {

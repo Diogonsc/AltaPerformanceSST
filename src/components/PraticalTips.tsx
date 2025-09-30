@@ -236,7 +236,7 @@ export default function PraticalTips() {
   return (
     <section
       id="dicas"
-      className="relative w-full bg-gradient-to-br from-slate-50 via-white to-blue-50/30 py-20 overflow-hidden px-4"
+      className="relative w-full bg-gradient-to-br from-slate-50 via-white to-blue-50/30 py-20 overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.05),transparent_50%)] pointer-events-none" />
@@ -262,7 +262,7 @@ export default function PraticalTips() {
         </div>
 
         {/* Grid de cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 px-4">
           {cards.map((card, index) => (
             <Card
               key={card.id}

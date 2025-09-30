@@ -15,7 +15,7 @@ export default function NRs() {
   return (
     <section 
       id="nrs"
-      className="relative w-full bg-gradient-to-br from-slate-50 via-white to-primary/5 py-20 overflow-hidden px-4"
+      className="relative w-full bg-gradient-to-br from-slate-50 via-white to-primary/5 py-20 overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.05),transparent_50%)] pointer-events-none" />
@@ -41,7 +41,7 @@ export default function NRs() {
         </div>
 
         {/* Grid de informações principais */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 mb-16 px-4">
           {/* Finalidade dos EPIs */}
           <Card className="group relative bg-white/80 backdrop-blur-sm hover:bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -102,7 +102,7 @@ export default function NRs() {
         </div>
 
         {/* Seção de conscientização */}
-        <div className="mb-16">
+        <div className="mb-16 px-4">
           <Card className="bg-gradient-to-br from-primary/5 via-white to-secondary/5 border-0 shadow-xl overflow-hidden">
             <CardContent className="p-8 md:p-12">
               <div className="text-center mb-8">

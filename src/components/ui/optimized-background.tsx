@@ -16,7 +16,7 @@ export default function OptimizedBackground({
   className,
   children,
   priority = false,
-  sizes = '100vw'
+  sizes: _sizes = '100vw'
 }: OptimizedBackgroundProps) {
   const [isLoaded, setIsLoaded] = useState(false)
   const [hasError, setHasError] = useState(false)

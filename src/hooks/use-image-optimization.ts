@@ -23,8 +23,8 @@ export function useImageOptimization(
   const {
     priority = false,
     lazy = true,
-    quality = 85,
-    sizes = '100vw'
+    quality: _quality = 85,
+    sizes: _sizes = '100vw'
   } = options
 
   const [state, setState] = useState<ImageOptimizationState>({
@@ -75,7 +75,7 @@ export function useImageOptimization(
 
 // Hook para otimizar múltiplas imagens
 export function useBatchImageOptimization(
-  images: Array<{ src: string; webpSrc?: string; priority?: boolean }>
+  _images: Array<{ src: string; webpSrc?: string; priority?: boolean }>
 ) {
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set())
   const [errorImages, setErrorImages] = useState<Set<string>>(new Set())

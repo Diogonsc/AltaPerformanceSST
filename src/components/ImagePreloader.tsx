@@ -48,12 +48,12 @@ export function useImagePreload(images: Array<{ src: string; webpSrc?: string; p
   useEffect(() => {
     const preloadPromises = images
       .filter(img => img.priority)
-      .map(img => {
+      .map(imageData => {
         return new Promise((resolve, reject) => {
           const img = new Image()
           img.onload = resolve
           img.onerror = reject
-          img.src = img.webpSrc || img.src
+          img.src = imageData.webpSrc || imageData.src
         })
       })
 
