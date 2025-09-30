@@ -9,7 +9,7 @@ import {
 } from "./ui/accordion";
 import { Shield, Smartphone, BookOpen, ArrowRightIcon } from "lucide-react";
 import ebookImage from "../assets/ebook.png";
-import ebookImageWebP from "/optimized/ebook.webp";
+import ebookImageWebP from "../assets/ebook.webp";
 import OptimizedImage from "./ui/optimized-image";
 
 export default function EBook() {
@@ -55,7 +55,7 @@ export default function EBook() {
                       className="w-full h-full object-cover"
                       width={400}
                       height={640}
-                      lazy={true}
+                      priority={true}
                     />
                   </div>
                   <Badge className="absolute top-4 right-4 bg-secondary text-primary font-bold">
@@ -72,10 +72,10 @@ export default function EBook() {
               <h4 className="text-2xl font-bold text-primary text-center md:text-left">
                 Matheus Corrêa
               </h4>
-              <p className="text-gray-600 leading-relaxed text-center md:text-left">
+              <p className="text-gray-600 text-lg leading-relaxed text-center md:text-left">
                 Sou profissional formado em Segurança do Trabalho com ampla experiência em consultoria, treinamentos, auditorias in loco, liderança e gestão de equipes. Atuante predominante nos ramos Hospitalar e Tecnológico, adquiri vasto conhecimento em Meio ambiente, Proteção Radiológica, Construção Civil, Auditoria, Certificação e entre outros.
               </p>
-              <p className="text-gray-600 leading-relaxed text-center md:text-left">
+              <p className="text-gray-600 text-lg leading-relaxed text-center md:text-left">
                 Hoje atuo diretamente no ramo tecnológico como Especialista SR em SST, com gestão de equipe, validação de documentos, auditorias in loco nos clientes, conformidade e potencialização de terceiros.
               </p>
             </div>

@@ -41,13 +41,20 @@ export default function OptimizedBackground({
     }
   }, [priority, src, webpSrc])
 
-  const handleLoad = () => {
-    setIsLoaded(true)
-  }
+  useEffect(() => {
+    // Simular carregamento da imagem de fundo
+    const imageUrl = webpSrc || src
+    const img = new Image()
+    
+    img.onload = () => setIsLoaded(true)
+    img.onerror = () => setHasError(true)
+    img.src = imageUrl
 
-  const handleError = () => {
-    setHasError(true)
-  }
+    return () => {
+      img.onload = null
+      img.onerror = null
+    }
+  }, [src, webpSrc])
 
   const backgroundStyle = {
     backgroundImage: `url(${webpSrc || src})`,
@@ -64,19 +71,6 @@ export default function OptimizedBackground({
       )}
       style={backgroundStyle}
     >
-      {/* Imagem oculta para carregamento */}
-      <img
-        src={webpSrc || src}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover opacity-0"
-        onLoad={handleLoad}
-        onError={handleError}
-        loading={priority ? 'eager' : 'lazy'}
-        decoding="async"
-        sizes={sizes}
-        aria-hidden="true"
-      />
-      
       {/* Placeholder enquanto carrega */}
       {!isLoaded && !hasError && (
         <div className="absolute inset-0 bg-gray-200 animate-pulse" />

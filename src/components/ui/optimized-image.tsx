@@ -79,21 +79,24 @@ export default function OptimizedImage({
     onError?.()
   }
 
-  const imageProps = {
-    ref: imgRef,
-    alt,
-    className: cn(
-      'transition-opacity duration-300',
-      isLoaded ? 'opacity-100' : 'opacity-0',
-      className
-    ),
-    onLoad: handleLoad,
-    onError: handleError,
-    loading: priority ? 'eager' : 'lazy',
-    decoding: 'async',
-    ...(width && { width }),
-    ...(height && { height })
-  }
+  // Carregar imagem em background para detectar quando está pronta
+  useEffect(() => {
+    if (!isInView) return
+
+    const imageUrl = webpSrc || src
+    const img = new Image()
+    
+    img.onload = handleLoad
+    img.onerror = handleError
+    img.src = imageUrl
+
+    return () => {
+      img.onload = null
+      img.onerror = null
+    }
+  }, [isInView, src, webpSrc, onLoad, onError])
+
+  // Remover imageProps já que não usamos mais tag img
 
   if (hasError) {
     return (
@@ -121,10 +124,15 @@ export default function OptimizedImage({
           )}
           style={{ width, height }}
         >
-          <img
-            src={placeholder}
-            alt=""
-            className="w-full h-full object-cover opacity-0"
+          {/* Placeholder usando div com background */}
+          <div
+            className="w-full h-full bg-gray-200"
+            style={{
+              backgroundImage: `url(${placeholder})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
             aria-hidden="true"
           />
         </div>
@@ -132,20 +140,25 @@ export default function OptimizedImage({
 
       {/* Imagem otimizada */}
       {isInView && (
-        <picture>
-          {webpSrc && (
-            <source
-              srcSet={webpSrc}
-              type="image/webp"
-              sizes={sizes}
-            />
+        <div
+          className={cn(
+            'transition-opacity duration-300',
+            isLoaded ? 'opacity-100' : 'opacity-0',
+            className
           )}
-          <img
-            {...imageProps}
-            src={src}
-            sizes={sizes}
-          />
-        </picture>
+          style={{
+            backgroundImage: `url(${webpSrc || src})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            width: width || '100%',
+            height: height || 'auto'
+          }}
+          onLoad={handleLoad}
+          onError={handleError}
+          aria-label={alt}
+          role="img"
+        />
       )}
     </div>
   )

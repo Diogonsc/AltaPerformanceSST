@@ -1,5 +1,6 @@
 import { Button } from "./ui/button"
 import { Card, CardContent } from "./ui/card"
+import { Shield } from "lucide-react"
 import profileImage from "../assets/profile.png"
 import profileImageWebP from "/optimized/profile.webp"
 import OptimizedImage from "./ui/optimized-image"
@@ -59,7 +60,7 @@ export default function Hero() {
 
         {/* Imagem de perfil */}
         <div className="flex justify-center lg:justify-end">
-          <Card className="bg-white/10 backdrop-blur-sm border-white/20 shadow-2xl overflow-hidden">
+          <Card className="bg-white/10 backdrop-blur-sm border-white/20 shadow-2xl overflow-hidden py-0">
             <CardContent className="p-0">
               <div className="relative">
                 <OptimizedImage
@@ -75,8 +76,11 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
                 
                 {/* Badge de especialista */}
-                <div className="absolute top-4 right-4 border border-secondary text-secondary px-4 py-2 rounded-full font-bold text-sm shadow-lg">
-                  Especialista
+                <div className="absolute bottom-0 left-0 right-0 bg-secondary text-primary px-4 py-3 font-bold text-sm shadow-lg text-center">
+                  <div className="flex items-center justify-center gap-2">
+                    <Shield className="w-4 h-4" />
+                    <span>Especialista em SST | Auditor</span>
+                  </div>
                 </div>
               </div>
             </CardContent>

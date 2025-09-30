@@ -15,7 +15,7 @@ export default function NRs() {
   return (
     <section 
       id="nrs"
-      className="relative w-full bg-gradient-to-br from-slate-50 via-white to-primary/5 py-20 overflow-hidden"
+      className="relative w-full bg-gradient-to-br from-slate-50 via-white to-primary/5 py-20 overflow-hidden px-4"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.05),transparent_50%)] pointer-events-none" />
@@ -51,12 +51,12 @@ export default function NRs() {
               <div className="w-15 h-15 bg-primary rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl">
                 <HardHat className="w-10 h-10 text-primary-foreground" />
               </div>
-              <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">
+              <CardTitle className="text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">
                 Finalidade dos EPIs
               </CardTitle>
             </CardHeader>
             <CardContent className="relative pt-0 pb-4">
-              <p className="text-gray-600 text-center leading-relaxed text-base">
+              <p className="text-gray-600 text-center leading-relaxed text-lg">
                 Os Equipamentos de Proteção Individual são destinados à proteção de riscos 
                 suscetíveis de ameaçar a segurança e a saúde do trabalhador, fornecendo uma 
                 barreira física entre o colaborador e os perigos presentes no ambiente laboral.
@@ -73,27 +73,27 @@ export default function NRs() {
               <div className="w-15 h-15 bg-secondary rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl">
                 <CheckCircle className="w-10 h-10 text-secondary-foreground" />
               </div>
-              <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-secondary transition-colors duration-300">
+              <CardTitle className="text-2xl font-bold text-gray-900 group-hover:text-secondary transition-colors duration-300">
                 Benefícios do Uso Correto
               </CardTitle>
             </CardHeader>
             <CardContent className="relative pt-0 pb-4">
-              <p className="text-gray-600 text-center leading-relaxed text-base mb-4">
-                <span className="font-semibold text-secondary">
+              <p className="text-gray-600 text-center leading-relaxed text-lg mb-4">
+                <span className="font-semibold text-primary">
                   Usados corretamente, os EPIs evitam acidentes, lesões, afastamentos e até a morte.
                 </span>
               </p>
               <div className="grid grid-cols-2 gap-2">
-                <Badge variant="secondary" className="bg-secondary/10 text-secondary border-secondary/20">
+                <Badge variant="secondary" className="bg-secondary/10 text-primary border-secondary/20">
                   Redução de Acidentes
                 </Badge>
-                <Badge variant="secondary" className="bg-secondary/10 text-secondary border-secondary/20">
+                <Badge variant="secondary" className="bg-secondary/10 text-primary border-secondary/20">
                   Proteção Eficaz
                 </Badge>
-                <Badge variant="secondary" className="bg-secondary/10 text-secondary border-secondary/20">
+                <Badge variant="secondary" className="bg-secondary/10 text-primary border-secondary/20">
                   Menor Absenteísmo
                 </Badge>
-                <Badge variant="secondary" className="bg-secondary/10 text-secondary border-secondary/20">
+                <Badge variant="secondary" className="bg-secondary/10 text-primary border-secondary/20">
                   Segurança Garantida
                 </Badge>
               </div>
