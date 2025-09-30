@@ -408,19 +408,18 @@ export default function PraticalTips() {
       </div>
       {/* Call to action */}
       <div className="w-full">
-        <div
-          className="relative p-8 md:p-12 w-full overflow-hidden min-h-[500px] flex items-center justify-center"
-          style={{
-            backgroundImage: "url(/optimized/banner01.webp)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
+        <div className="relative w-full overflow-hidden min-h-[500px] flex items-center justify-center">
+          {/* Imagem de fundo */}
+          <img
+            src="/optimized/banner01.webp"
+            alt="Banner de estratégias de alta performance"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          
           {/* Gradiente overlay com tonalidade primary */}
           <div className="absolute inset-0 bg-primary/80" />
 
-          <div className="relative text-center z-10 max-w-4xl mx-auto">
+          <div className="relative text-center z-10 max-w-4xl mx-auto p-8 md:p-12">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Pronto para implementar essas estratégias na sua carreira?
             </h3>

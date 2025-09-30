@@ -204,19 +204,18 @@ export default function NRs() {
 
       {/* Call to Action com banner - Fora do container limitado */}
       <div className="w-full mt-16">
-        <div 
-          className="relative p-8 md:p-12 w-full overflow-hidden min-h-[500px] flex items-center justify-center"
-          style={{
-            backgroundImage: 'url(/optimized/banner02.webp)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
+        <div className="relative w-full overflow-hidden min-h-[500px] flex items-center justify-center">
+          {/* Imagem de fundo */}
+          <img
+            src="/optimized/banner02.webp"
+            alt="Banner de treinamento NR 06"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          
           {/* Gradiente overlay com tonalidade primary */}
           <div className="absolute inset-0 bg-primary/80" />
           
-          <div className="relative text-center z-10 max-w-4xl mx-auto">
+          <div className="relative text-center z-10 max-w-4xl mx-auto p-8 md:p-12">
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="bg-white/20 p-3 rounded-full">
                 <Users className="h-8 w-8 text-white" />
